@@ -1,1 +1,9 @@
-# Taller-Colecciones
+1. ¿Por qué ArrayList<int> no compila y ArrayList<Integer> sí?   Las colecciones en Java solo aceptan tipos de referencia (objetos), no tipos de datos primitivos como int. Integer es la clase envolvente que permite representar valores enteros en forma de objetos compatibles con las colecciones.
+
+2. ¿Por qué eliminar a Nevado de Favoritas no lo eliminó de Viaje? ¿Qué relación muestra eso?   Porque aunque las listas compartan las referencias a los mismos objetos Cancion en la memoria, cada Playlist mantiene su propia estructura de datos (ArrayList) independiente. Modificar o eliminar un elemento de una lista no afecta los elementos de la otra. Esto muestra una relación de agregación.
+
+3. ¿Qué diferencia hay entre la relación Playlist-Cancion y la relación Parqueadero-Puesto?   La relación entre Playlist y Cancion es una agregación, lo que significa que las canciones tienen un ciclo de vida independiente y pueden existir sin estar asociadas a ninguna playlist (o estar en varias). En cambio, la relación entre Parqueadero y Puesto es una composición, lo que significa que los puestos dependen estrictamente del parqueadero; no tienen existencia propia fuera de él.
+
+4. ¿Por qué totalCanciones debe ser static y titulo no?   totalCanciones es static porque pertenece a la clase en general y su propósito es llevar un registro o contador global compartido por todas las instancias de la clase Cancion. Por el contrario, titulo no puede ser estático porque cada objeto Cancion creado necesita almacenar su propia información única e individual.
+
+5. ¿Por qué un método static no puede usar this?   Porque la palabra clave this hace referencia explícita a la instancia u objeto actual en ejecución. Los métodos estáticos pertenecen exclusivamente a la clase y pueden ser invocados directamente sin necesidad de crear ningún objeto.
